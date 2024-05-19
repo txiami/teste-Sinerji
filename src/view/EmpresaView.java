@@ -23,10 +23,11 @@ public class EmpresaView {
             System.out.println("4. Funcionário com maior salário");
             System.out.println("5. Funcionário com maior benefício");
             System.out.println("6. Vendedor com maior venda");
-            System.out.println("7. Sair");
+            System.out.println("7. LISTAR TODOS");
+            System.out.println("8. Sair");
 
             int opcao = scanner.nextInt();
-            if (opcao == 7) break;
+            if (opcao == 8) break;
 
             System.out.println("Digite o mês:");
             int mes = scanner.nextInt();
@@ -51,6 +52,16 @@ public class EmpresaView {
                     break;
                 case 6:
                     System.out.println("Vendedor com maior venda: " + controller.getVendedorMaiorVenda(mes, ano));
+                    break;
+                case 7:
+                    System.out.println("\n---------------------------------------\n");
+                    System.out.println("Total pago: " + controller.calcularTotalPago(mes, ano));
+                    System.out.println("Total salários: " + controller.calcularTotalSalarios(mes, ano));
+                    System.out.println("Total benefícios: " + controller.calcularTotalBeneficios(mes, ano));
+                    System.out.println("Funcionário com maior salário: " + controller.getUsuarioMaiorSalario(mes, ano));
+                    System.out.println("Funcionário com maior benefício: " + controller.getUsuarioMaiorBeneficio(mes, ano));
+                    System.out.println("Vendedor com maior venda: " + controller.getVendedorMaiorVenda(mes, ano));
+                    System.out.println("\n---------------------------------------\n");
                     break;
                 default:
                     System.out.println("Opção inválida.");
